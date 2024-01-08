@@ -40,7 +40,7 @@ public class GoogleSearch {
 
 	@And("user in the search bar enters some value to search for")
 	public void user_in_the_search_bar_enters_some_value_to_search_for() {
-		System.out.println("no hitting the enter");
+		System.out.println("noW hitting the enter");
 		driver.findElement(By.id("APjFqb")).sendKeys(Keys.ENTER);
 
 	}
