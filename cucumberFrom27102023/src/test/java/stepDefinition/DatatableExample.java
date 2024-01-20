@@ -1,5 +1,12 @@
 package stepDefinition;
 
+import java.util.List;
+
+import io.cucumber.datatable.DataTable;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
 public class DatatableExample {
 	@Given("uers opens up the browser in chrome")
 	public void uers_opens_up_the_browser_in_chrome() {
@@ -14,8 +21,10 @@ public class DatatableExample {
 	}
 
 	@When("checks for jsExecuter code in same site for various values")
-	public void checks_for_js_executer_code_in_same_site_for_various_values(io.cucumber.datatable.DataTable dataTable) {
-	    // Write code here that turns the phrase above into concrete actions
+	public void checks_for_js_executer_code_in_same_site_for_various_values(DataTable dataTable) {
+	    List<List<String>> data= dataTable.cells();
+	    
+		// Write code here that turns the phrase above into concrete actions
 	    // For automatic transformation, change DataTable to one of
 	    // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
 	    // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
