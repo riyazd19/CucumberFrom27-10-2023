@@ -34,11 +34,15 @@ public class FaceBookDataTableLogin {
 			throws InterruptedException {
 
 		List<Map<String, String>> data = dataTable.asMaps(String.class, String.class);
-		for (Map<String, String> mapdata : data)
-		{
+		/*
+		 * List<Map<String, String>> data: This line declares a list named data that
+		 * contains maps where the keys are strings and the values are also strings.
+		 * This is a common data structure used for storing tabular data.
+		 */
+		for (Map<String, String> mapdata : data) {
 			driver.findElement(By.id("email")).clear();
 			driver.findElement(By.id("email")).sendKeys(mapdata.get("Username"));
-			driver.findElement(By.id("pass")).clear();		
+			driver.findElement(By.id("pass")).clear();
 			driver.findElement(By.id("pass")).sendKeys(mapdata.get("Password"));
 			Thread.sleep(5000);
 
