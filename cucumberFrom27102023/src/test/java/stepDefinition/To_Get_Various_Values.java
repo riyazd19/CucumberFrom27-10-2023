@@ -16,6 +16,8 @@ public class To_Get_Various_Values {
 	public void user_launches_the_browser() {
 		WebDriverManager.chromedriver().setup();
 		driver =new ChromeDriver();
+		driver.manage().window().maximize();
+		//driver.manage().timeouts().implicitlyWait(1000.SECONDS);
 		driver.get("https://automationexercise.com/");
 		
 	    // Write code here that turns the phrase above into concrete actions
@@ -52,6 +54,7 @@ public class To_Get_Various_Values {
 	@Then("validate those values againest user provided values")
 	public void validate_those_values_againest_user_provided_values() {
 	   System.out.println("space two");
+	   driver.close();
 	}
 
 }

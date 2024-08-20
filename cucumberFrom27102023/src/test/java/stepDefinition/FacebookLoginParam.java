@@ -14,23 +14,25 @@ public class FacebookLoginParam {
 	ChromeDriver driver=null;
 
 	@Given("user opens up the browser")
-	public void user_opens_up_the_browser() {
+	public void user_opens_up_the_browser() throws InterruptedException {
 		WebDriverManager.chromedriver().setup();
 		ChromeDriver driver =new ChromeDriver();
-		driver.get("http://www.google.com");
+		Thread.sleep(2000);
+		driver.get("http://www.facebook.com");
 
-		throw new io.cucumber.java.PendingException();
+		//throw new io.cucumber.java.PendingException();
 	}
 
 	@And("navigates to facebook url")
 	public void navigates_to_facebook_url() throws InterruptedException {
-		driver.findElement(By.id("APjFqb")).click();
-		Thread.sleep(4000);
-		driver.findElement(By.id("APjFqb")).sendKeys("www.facebook.com");
+		//driver.findElement(By.id("APjFqb")).click();
+		driver.findElement(By.xpath("//textarea[@id=\"APjFqb\"]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//textarea[@id=\"APjFqb\"]")).sendKeys("www.facebook.com");
 		System.out.println("noW hitting the enter");
 		driver.findElement(By.id("APjFqb")).sendKeys(Keys.ENTER);
 
-		throw new io.cucumber.java.PendingException();
+		//throw new io.cucumber.java.PendingException();
 	}
 
 	@When("^user enters (.*) and (.*) done$")
